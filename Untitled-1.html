@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencari Material Termurah</title>
+    <style>
+        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { margin: 0; background-color: #f4f7f6; color: #333; }
+
+        /* Header */
+        .header { background-color: #2c3e50; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        
+        /* Search & Filter Section */
+        .control-panel { background: white; padding: 20px; border-bottom: 1px solid #ddd; display: flex; gap: 15px; align-items: center; flex-wrap: wrap; }
+        .search-box { flex-grow: 2; position: relative; }
+        .search-box input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; }
+        
+        .filter-group { display: flex; align-items: center; gap: 10px; }
+        select { padding: 10px; border-radius: 4px; border: 1px solid #ccc; cursor: pointer; }
+
+        /* Table Section */
+        .main-content { padding: 20px; }
+        .card { background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden; }
+        table { width: 100%; border-collapse: collapse; }
+        th { background-color: #f8f9fa; text-align: left; padding: 15px; border-bottom: 2px solid #dee2e6; color: #666; text-transform: uppercase; font-size: 12px; }
+        td { padding: 15px; border-bottom: 1px solid #eee; }
+
+        /* Status & Badges */
+        .price-tag { font-weight: bold; color: #2e7d32; font-size: 16px; }
+        .cheapest-badge { background-color: #e8f5e9; color: #2e7d32; padding: 4px 8px; border-radius: 12px; font-size: 11px; font-weight: bold; margin-left: 8px; border: 1px solid #2e7d32; }
+        .supplier-name { color: #007bff; font-weight: 500; }
+        .btn-detail { background: #eee; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 12px; }
+        .btn-detail:hover { background: #ddd; }
+
+        tr:hover { background-color: #fdfdfd; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div style="font-size: 20px; font-weight: bold;">BUILDER-PRO: Material Finder</div>
+        <div>User: Project Manager</div>
+    </div>
+
+    <div class="control-panel">
+        <div class="search-box">
+            <input type="text" placeholder="Cari material (contoh: Semen Gresik, Besi 10mm)...">
+        </div>
+        
+        <div class="filter-group">
+            <label>Urutkan:</label>
+            <select>
+                <option>Harga Termurah</option>
+                <option>Harga Termahal</option>
+                <option>Terdekat (Lokasi)</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label>Kategori:</label>
+            <select>
+                <option>Semua</option>
+                <option>Semen</option>
+                <option>Besi & Baja</option>
+                <option>Kayu</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Material</th>
+                        <th>Supplier / Toko</th>
+                        <th>Satuan</th>
+                        <th>Harga Satuan</th>
+                        <th>Update Terakhir</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Semen Gresik 40kg</strong>
+                        </td>
+                        <td><span class="supplier-name">TB. Maju Jaya</span></td>
+                        <td>Sak</td>
+                        <td>
+                            <span class="price-tag">Rp 62.000</span>
+                            <span class="cheapest-badge">TERMURAH</span>
+                        </td>
+                        <td>2 jam yang lalu</td>
+                        <td><button class="btn-detail">Lihat Lokasi</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Semen Gresik 40kg</strong>
+                        </td>
+                        <td><span class="supplier-name">Depo Bangunan XYZ</span></td>
+                        <td>Sak</td>
+                        <td>
+                            <span class="price-tag">Rp 64.500</span>
+                        </td>
+                        <td>1 hari yang lalu</td>
+                        <td><button class="btn-detail">Lihat Lokasi</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Besi Beton 10mm (12m)</strong>
+                        </td>
+                        <td><span class="supplier-name">Baja Sakti Steel</span></td>
+                        <td>Batang</td>
+                        <td>
+                            <span class="price-tag">Rp 88.000</span>
+                            <span class="cheapest-badge">TERMURAH</span>
+                        </td>
+                        <td>5 menit yang lalu</td>
+                        <td><button class="btn-detail">Lihat Lokasi</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
